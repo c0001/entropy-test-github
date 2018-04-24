@@ -10,17 +10,17 @@
   :END:
 
 - [[#前言][前言]]
-- [[配置介绍][配置介绍]]
+- [[#配置介绍][配置介绍]]
   - [[各配置文件概览][各配置文件概览]]
   - [[快捷键绑定汇总][快捷键绑定汇总]]
   - [[Emacs on windows][Emacs on windows]]
   - [[字体设置][字体设置]]
   - [[最后][最后]]
-- [[Learning major mode within entropy-emacs][Learning major mode within entropy-emacs]]
+- [[#Learning major mode within entropy-emacs][Learning major mode within entropy-emacs]]
   - [[artist-mode][artist-mode]]
   - [[web-mode][web-mode]]
   - [[popwin-mode][popwin-mode]]
-- [[learning interactive function][learning interactive function]]
+- [[#learning interactive function][learning interactive function]]
 
 
 * 前言

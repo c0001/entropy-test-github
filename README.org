@@ -85,9 +85,7 @@
   最后欢迎萌新和大神们来提问和帮助我改进配置.
 
 * 配置介绍
-  :PROPERTIES:
-  :CUSTOM_ID: h-bd34ca1e-8f06-4427-865c-8c8e1e0a0a67
-  :END:
+
   配置文件中很多都是引用[[https://github.com/seagle0128/.emacs.d][centaur emacs]]的配置一些模式文件也是整个照搬其原生文件的,本人对于这些引用都原
   样使用其版权协议和作者信息,如果 'centaur emacs' 的作者对本仓库中的文件版权信息有疑问和追诉,请联系
   本人,同时也希望 'centaur emacs' 的作者对本仓库进行帮助和建议,在此感谢 'centaur emacs' 为我开辟了一

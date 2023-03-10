@@ -49,7 +49,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          name: CI-release_${{ env.RELEASE_DATE }}
+          name: "CI release ${{ env.RELEASE_DATE }}"
           tag_name: CI-release_${{ env.RELEASE_DATE }}
           prerelease: true
           files: |

@@ -33,20 +33,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install Deps
-        run:
-          sudo apt-get -y install markdown
+      # - name: Install Deps
+      #   run:
+      #     sudo apt-get -y install markdown
       - name: Build
         run: |
           echo 'building ...'
+          zip RELASE.zip README.md
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          name: "PreBuilt (CI: dev)"
           prerelease: true
           files: |
-            README.md
+            RELASE.zip
 
 # Local Variables:
 # tab-width: 2

@@ -39,6 +39,7 @@ jobs:
       - name: Build
         run: |
           echo 'building ...'
+          echo this is ref tag of ${{ github.ref }}
           zip RELASE.zip README.md
       - name: Release
         uses: softprops/action-gh-release@v1

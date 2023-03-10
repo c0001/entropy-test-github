@@ -38,7 +38,7 @@ jobs:
       - name: Set Env
         run: |
           echo "RELEASE_DATE=$(date -u +'%Y%m%d%H%M%S')" >> ${GITHUB_ENV}
-          echo "RELEASE_VERSION=$(cat version) >> ${GITHUB_ENV}"
+          echo "RELEASE_VERSION=$(cat version)"          >> ${GITHUB_ENV}
       # - name: Install Deps
       #   run:
       #     sudo apt-get -y install markdown

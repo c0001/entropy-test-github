@@ -33,11 +33,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Set Env
         run: |
           echo "RELEASE_DATE=$(date -u +'%Y%m%d%H%M%S')" >> ${GITHUB_ENV}
-      - name: Checkout
-        uses: actions/checkout@v2
+          echo "RELEASE_VERSION=$(cat version) >> ${GITHUB_ENV}"
       # - name: Install Deps
       #   run:
       #     sudo apt-get -y install markdown
@@ -50,7 +51,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           name: "CI release ${{ env.RELEASE_DATE }}"
-          tag_name: CI-release_${{ env.RELEASE_DATE }}
+          tag_name: v${{ env.RELEASE_VERSION }}_CI-${{ env.RELEASE_DATE }}
           prerelease: true
           files: |
             RELASE.zip

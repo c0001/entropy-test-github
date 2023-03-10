@@ -45,9 +45,9 @@ jobs:
           zip RELASE.zip README.md
       - name: Release
         uses: softprops/action-gh-release@v1
-        name: CI-for-latest
-        tag_name: CI
         with:
+          name: CI-for-latest
+          tag_name: CI
           prerelease: true
           files: |
             RELASE.zip

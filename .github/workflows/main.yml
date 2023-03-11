@@ -47,6 +47,13 @@ jobs:
           echo 'building ...'
           echo this is ref tag of ${{ github.ref }}
           zip RELASE.zip README.md
+      - name: "Create latest pre-release tag"
+        uses: rickstaa/action-create-tag@v1
+        id: "tag_create"
+        with:
+          tag: "CI/v${{ env.RELEASE_VERSION }}/${{ env.RELEASE_DATE }}"
+          tag_exists_error: true
+          message: "Create latest pre-release"
       - name: Release
         uses: softprops/action-gh-release@v1
         with:

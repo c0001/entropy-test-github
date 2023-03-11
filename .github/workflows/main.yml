@@ -57,10 +57,7 @@ jobs:
           tag: ${{ env.RELEASE_TAGNAME }}
           tag_exists_error: true
           no_verify_tag: false
-          message: "Latest pre-release on \
-                    branch [${{ github.ref_name }}] \
-                    in commit [${{ github.sha }}], \
-                    with TagName [${{ env.RELEASE_TAGNAME }}]."
+          message: "Latest pre-release on branch [${{ github.ref_name }}] in commit [${{ github.sha }}], with TagName [${{ env.RELEASE_TAGNAME }}]."
       - name: Release
         uses: softprops/action-gh-release@v1
         with:

@@ -56,6 +56,7 @@ jobs:
         with:
           tag: ${{ env.RELEASE_TAGNAME }}
           tag_exists_error: true
+          no_verify_tag: false
           message: "Create latest pre-release"
       - name: Release
         uses: softprops/action-gh-release@v1

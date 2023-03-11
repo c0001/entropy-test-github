@@ -39,26 +39,27 @@ jobs:
         run: |
           echo "RELEASE_DATE=$(date -u +'%Y%m%d%H%M%S')" >> ${GITHUB_ENV}
           echo "RELEASE_VERSION=$(cat version)"          >> ${GITHUB_ENV}
+          echo "RELEASE_TAGNAME=CI/v${{ env.RELEASE_VERSION }}/${{ env.RELEASE_DATE }}" >> ${GITHUB_ENV}
       # - name: Install Deps
       #   run:
       #     sudo apt-get -y install markdown
       - name: Build
         run: |
           echo 'building ...'
-          echo this is ref tag of ${{ github.ref }}
+          echo "this is github.ref of ${{ github.ref }}, release tagname of ${{ env.RELEASE_TAGNAME }}"
           zip RELASE.zip README.md
       - name: "Create latest pre-release tag"
         uses: rickstaa/action-create-tag@v1
         id: "tag_create"
         with:
-          tag: "CI/v${{ env.RELEASE_VERSION }}/${{ env.RELEASE_DATE }}"
+          tag: ${{ env.RELEASE_TAGNAME }}
           tag_exists_error: true
           message: "Create latest pre-release"
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           name: "CI release ${{ env.RELEASE_DATE }}"
-          tag_name: v${{ env.RELEASE_VERSION }}_CI-${{ env.RELEASE_DATE }}
+          tag_name: ${{ env.RELEASE_TAGNAME }}
           prerelease: true
           files: |
             RELASE.zip

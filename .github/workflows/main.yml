@@ -35,10 +35,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Set Env
+      - name: Set Env (Top)
         run: |
           echo "RELEASE_DATE=$(date -u +'%Y%m%d%H%M%S')" >> ${GITHUB_ENV}
           echo "RELEASE_VERSION=$(cat version)"          >> ${GITHUB_ENV}
+      - name: Set Env (Tag)
+        run: |
           echo "RELEASE_TAGNAME=CI/v${{ env.RELEASE_VERSION }}/${{ env.RELEASE_DATE }}" >> ${GITHUB_ENV}
       # - name: Install Deps
       #   run:

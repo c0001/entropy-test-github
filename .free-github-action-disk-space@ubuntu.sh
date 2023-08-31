@@ -28,10 +28,9 @@
 echo "=============================================================================="
 echo "Freeing up disk space on CI system"
 echo "=============================================================================="
-
+df -h
 echo "Listing 100 largest packages"
 dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 100
-df -h
 echo "Removing large packages"
 sudo apt-get remove -y '^ghc-8.*'
 sudo apt-get remove -y '^dotnet-.*'

@@ -45,6 +45,8 @@ jobs:
       # - name: Install Deps
       #   run:
       #     sudo apt-get -y install markdown
+      - name: "Show free disk space"
+        run: df -h
       - name: Build
         run: |
           echo 'building ...'

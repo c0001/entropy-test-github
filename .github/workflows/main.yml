@@ -45,8 +45,9 @@ jobs:
       # - name: Install Deps
       #   run:
       #     sudo apt-get -y install markdown
-      - name: "Show free disk space"
-        run: df -h
+      - name: "Free disk space"
+        run: |
+          bash .free-github-action-disk-space@ubuntu.sh
       - name: Build
         run: |
           echo 'building ...'
